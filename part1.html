@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  Bingfan Tian
+  javascript1 assignment
+  part1 -> use javascript to create page
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Bingfan Tian(tianb4) - JavaScript(part1)</title>
+
+</head>
+
+<body>
+  <script>
+    // <!--put your script tags here to fullfill the assignment-->
+	document.write("<div>You will add your javascript code after this</div>");
+	var imageURL = "http://ceclnx01.cec.miamioh.edu/~campbest/cse383-f19-campbest-public/javascript1/randomImage.php";
+	// <!--insert four images-->
+	for (var i = 0; i < 4; i++) {
+		// <!--for the third request. The first part of the querystring, the 1569504918596, is simply the current time in seconds. Gotten by calling Date.now()-->
+		document.write("<div style=float:left;padding:6px;><img src = " + imageURL + "?" + Date.now() + i + "></div>");
+	}
+	document.write("<div style=padding:5px;><img src = " + imageURL + "?" + Date.now() + 4 + "></div>");
+
+	var ramdomChar = "abcdefghijklmnopqrstuvwxyz";
+	for (var i = 0; i < 200; i++) {
+		document.write("<div style=padding:10px;border:1px;border-style:solid;>" + i + ": ");
+		var length = Math.floor(Math.random() * 50) + 5;
+		for (var j = 0; j < length; j++) {
+			var char = ramdomChar[Math.floor(Math.random() * 26)];
+			document.write(char);
+		}
+		document.write("</div>");
+	}
+  </script>
+</body>
+</html>

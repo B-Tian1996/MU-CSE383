@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Bingfan Tian
+  javascript1 assignment
+  part1 -> use javascript to create page
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Bingfan Tian(tianb4) - JavaScript(part1)</title>
+
+</head>
+<body>
+  <script>
+    <!--put your script tags here to fullfill the assignment-->
+	var divStyle = "style=position:absolute;width:40px;height:40px;background-color:red;";
+	var position1 = "top:" + Math.floor(Math.random() * 150 + 0) + "px";
+	var position2 = "top:" + Math.floor(Math.random() * 150 + 100) + "px";
+	var position3 = "top:" + Math.floor(Math.random() * 150 + 200) + "px";
+	document.write("<div id=box1 " + divStyle + position1 + "></div>");
+	document.write("<div id=box2 " + divStyle + position2 + "></div>");
+	document.write("<div id=box3 " + divStyle + position3 + "></div>");
+	
+	function move(box) {
+		var elem = document.getElementById(box);
+		var pos = 0;
+		var id = setInterval(frame, 5);
+		var speed = Math.floor(Math.random() * 5 + 1);
+		function frame() {
+			if (pos > 5000) {
+				clearInterval(id);
+			} else {
+				pos += speed; 
+				elem.style.left = pos + "px"; 
+			}
+		}
+	}
+	move("box1");
+	move("box2");
+	move("box3");
+  </script>
+</body>
+</html>

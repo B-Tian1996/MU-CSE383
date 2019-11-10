@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  Bingfan Tian
+  javascript1 assignment
+  part1 -> use javascript to create page
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Bingfan Tian(tianb4) - JavaScript(part1)</title>
+
+</head>
+
+<body>
+  <script>
+    <!--put your script tags here to fullfill the assignment-->
+	function getRandomColor() {
+		var letters = '0123456789ABCDEF';
+		var color = '#';
+		for (var i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	}
+  
+	document.write("<canvas id=myCanvas width=500 height=500></canvas>");
+	<!--insert 20 random rectangulars with random color-->
+	for (var i = 0; i < 20; i++) {
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		var X = Math.floor(Math.random() * 400);
+		var Y = Math.floor(Math.random() * 400);
+		var width = Math.floor(Math.random() * 100);
+		var height = Math.floor(Math.random() * 100);
+		ctx.fillStyle = getRandomColor();
+		ctx.fillRect(X,Y,width,height);
+	}
+  </script>  
+</body>
+</html>
